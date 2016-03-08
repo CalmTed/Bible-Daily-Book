@@ -1,0 +1,200 @@
+body{
+	margin:0;
+	width:100%;
+	min-height:500px;
+	background-color:#fefefe;
+	font-family:Helvetica,Serif-sens;
+	color:#333;
+}
+*:focus{
+	outline:none;
+}
+*{
+	-webkit-tap-highlight-color: #0086b3;
+	box-sizing: content-box;
+}
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------------CONTENT--------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+#background{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:100;
+}
+#background img{
+	height:100%;
+}
+#content{
+	background-color:#555555;
+	position:relative;
+	margin-top:570px;
+	font-family:inset,Helvetica,Serif-sens;
+	z-index:1000;
+}
+#profile{
+	display:inline-block;
+	padding:0 5%;
+	width:30%;
+	text-align:center;
+	z-index:1300;
+}
+#image img{
+	margin-top:-64px;
+	height:128px;
+}
+#name{
+	text-align:center;
+	color:#aaa;
+	font-size:30px;
+}
+#progress{
+	padding-right:5%;
+	display:inline-block;
+	text-align:right;
+	width:55%;
+	float:right;
+	height:100px;
+}
+#times{
+	background-color: #2E7D32;
+	border-radius: 50%;
+	box-shadow: 2px 2px 2px rgba(64, 64, 64, 0.3);
+	color: #eee;
+	display: inline-block;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 0px;
+	position: relative;
+	margin-right: -12px;
+	text-align: center;
+	width: 40px;
+	z-index: 110;
+}
+#progbar{
+	background-color: #7B7B7B;
+	display: inline-block;
+	height: 30px;
+	margin-top: 34px;
+	position: relative;
+	top: 10px;
+	width: 80%;
+	z-index: 100;
+}
+#progbar:before{
+	background-color:#52bf37;
+	content:'';
+	display:block;
+	height:100%;
+	width:0%;
+	transition:width linear 1s;
+}
+#addprogr{
+	background-color: #317934;
+	color: #eee;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 27px;
+	margin-left: -4px;
+	text-align: center;
+	position: relative;
+	width: 30px;
+}
+#table{
+	font-size:20px;
+	margin-top:100px;
+	min-height:100px;
+}
+table{
+	color:#eee;
+	width:100%;
+}
+tr{
+	height:40px;
+}
+#table .th{
+	background-color:#444;
+}
+#table .th:hover{
+	background-color:#444;
+}
+#table td{
+	text-align:center;
+}
+#table tr:hover{
+	background-color:#777;
+}
+#table .s{
+	text-align:left;
+	max-height:30px;
+}
+#toppanel{
+	background-color: #444;
+	display:none;
+	left: 0;
+	position: fixed;
+	height: 50px;
+	top: 0;
+	width: 100%;
+	z-index: 1500;
+}
+#win{
+	background-color: #777;
+	display:none;
+	position: fixed;
+	left: 0;
+	height: 0%;
+	top: 50px;
+	width: 100%;
+	z-index: 1550;
+}
+#win.open,#toppanel.open{
+	display:block;
+}
+/* -------------------------------------------------------------------------------------- */
+/* ----------------------------------------------FOOTER-------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+footer{
+	position:absolute;
+	width:100%;
+	height:25%;
+	padding-top:12%;
+	left:0%;
+	text-align:center;
+	background-color:#333;
+	z-index:101;
+}
+@font-face {
+    font-family: inset;
+    src: url(fonts/PFSquareSansPro-Light.ttf);
+}
+/* ---------------------------------- MOBILE SCREEN -------------------------- */
+@media only screen and (max-width:700px) {
+
+#profile{
+	display:block;
+	padding:0 5%;
+	width:90%;
+	text-align:center;
+	z-index:1300;
+}
+#progress{
+	padding-right:5%;
+	display:block;
+	text-align:right;
+	width:100%;
+	float:right;
+	height:100px;
+}
+footer{
+	width:100%;
+	left:0%;
+}
+}
+/* ------------------------------- SPETIAL SIZE ---------------------------------*/
+@media only screen and (max-width:1170px) {
+}
