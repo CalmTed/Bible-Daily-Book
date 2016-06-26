@@ -1,38 +1,9 @@
-body{
-	margin:0;
-	width:100%;
-	min-height:500px;
-	background-color:#fefefe;
-	font-family:Helvetica,Serif-sens;
-	color:#333;
-}
-*:focus{
-	outline:none;
-}
-*{
-	-webkit-tap-highlight-color: #0086b3;
-	box-sizing: content-box;
-}
+/* style.php */
+/* only for u.php */ 
 /* ---------------------------------------------------------------------------------------- */
 /* ----------------------------------------------CONTENT--------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
-#background{
-	position:fixed;
-	top:0;
-	left:0;
-	width:100%;
-	z-index:100;
-}
-#background img{
-	height:100%;
-}
-#content{
-	background-color:#555555;
-	position:relative;
-	margin-top:570px;
-	font-family:inset,Helvetica,Serif-sens;
-	z-index:1000;
-}
+/* ----- user info ----- */
 #profile{
 	display:inline-block;
 	padding:0 5%;
@@ -43,6 +14,7 @@ body{
 #image img{
 	margin-top:-64px;
 	height:128px;
+	border-radius: 5px;
 }
 #name{
 	text-align:center;
@@ -77,7 +49,7 @@ body{
 	background-color: #7B7B7B;
 	display: inline-block;
 	height: 30px;
-	margin-top: 34px;
+	margin-top: 27px;
 	position: relative;
 	top: 10px;
 	width: 80%;
@@ -104,10 +76,162 @@ body{
 	position: relative;
 	width: 30px;
 }
+/* ----- under buttons ----- */
+#btbuttons{
+	padding: 37px 0px 0px 10px;
+}
+.btbutton{
+	background: #676767;
+	width: 64px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	display:inline-block;
+}
+.btbutton:hover{
+	background: #6e6e6e;
+}
+.btbutton:active{
+	background: #777;
+}
+/* ----- settings tab ----- */
+.settings{
+	text-align:center;
+	padding-top:0px;
+	padding-bottom:100px;
+}
+.settings h1{
+	color: #eee;
+	font-weight: 300;
+	margin-top: -40px;
+	margin-bottom: 100px;
+}
+#settlbl{
+	color:#eee;
+	font-size:1.7pc;
+}
+#settlbl input{
+	margin-left:5px;
+	
+}
+.settchckpass{
+	font-family:inset,Helvetica,Serif-sens;
+	display:inline-block;
+	padding:0 10px;
+	height:30px;
+	font-size:25px;
+	border:0;
+	border-left:1px solid #555;
+	color:#333;
+	background-color:#888;
+	cursor:pointer;
+}
+.settchckpass:hover{
+	background-color:#999;
+}
+.settchckpass:active{
+	background-color:#aaa;
+	color:#eee;
+}
+.settinputs{
+	color: #eee;
+	padding: 3% 25%;
+	padding-top:0;
+	font-size: 24px;
+	text-align:center;
+}
+.settinputs h1{
+	font-size: 136.5%;
+	color: #eee;
+	font-weight: 300;
+	margin-top: -40px;
+}
+.settinputs input{
+	min-width:40%;
+	float:right;
+}
+.settinputs label{
+	display:block;
+	text-align:left;
+	margin-top:0;
+	margin-bottom:1%;
+}
+.settinputs button{
+	font-family: inset,Helvetica,Serif-sens;
+	display: inline-block;
+	min-width: 40%;
+	padding: 1px 5px;
+	height: 30px;
+	font-size: 25px;
+	border: 0;
+	color: #eee;
+	background-color: #888;
+	cursor: pointer;
+	margin-top:5%;
+}
+.settinputs button:hover{
+	background-color: #777;
+}
+.settinputs button:active{
+	background-color:#aaa;
+}
+#sett-aang{
+margin-top: 10%;
+	text-align: right;
+}
+#sett-aang button{
+	
+}
+#sett-aang small{
+	font-size: 60%;
+}
+#sett-aang .img{
+	display: inline-block;
+	float: left;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJ0lEQVQoU2N89+7dfwY0ICgoiC7EwDgUFP4HAnSXv3//HtMzQ0AhADRiNeQ5H806AAAAAElFTkSuQmCC);
+	background-size: 17px;
+	height: 128px;
+}
+#sett-aang .img img{
+	height:128px;
+}
+#sett-a-lab,#sett-b-lab{
+	display: inline-block;
+	background-color: #888;
+	width: 40%;
+	text-align: center;
+}
+#sett-a-lab:hover,#sett-b-lab:hover{
+	background-color:#777;
+	cursor:pointer;
+}
+#sett-bg{
+	margin-top: 10%;
+	text-align: right;
+	overflow:hidden;
+}
+#sett-bg button:last-child{
+	margin-bottom: 10%;
+}
+#sett-bg img{
+	width:50%;
+	float: left;
+}
+#sett-bg small{
+	font-size: 60%;
+}
+/* ----- table tab ----- */
 #table{
 	font-size:20px;
-	margin-top:100px;
 	min-height:100px;
+}
+#table h1{
+	color: #eee;
+	text-align: center;
+	font-weight: 300;
+	margin-top: -40px;
+	font-size: 164.5%;
 }
 table{
 	color:#eee;
@@ -128,53 +252,148 @@ tr{
 #table tr:hover{
 	background-color:#777;
 }
+#table tr:active{
+	background-color:#6a6a6a;
+}
 #table .s{
 	text-align:left;
 	max-height:30px;
 }
+/* ----- win and top panel ----- */
+#toppanel.active{
+	top:0px;
+}
 #toppanel{
 	background-color: #444;
-	display:none;
 	left: 0;
 	position: fixed;
 	height: 50px;
-	top: 0;
+	top: -50px;
 	width: 100%;
-	z-index: 1500;
+	z-index: 1600;
+	transition:top .1s .1s;
+}
+#win.active{
+	top:50px;
+	transform:rotateY(0deg);
+	opacity: 1;
 }
 #win{
+	transform:rotateY(40deg);
+	overflow-y:auto;
+	overflow-x: hidden;
 	background-color: #777;
-	display:none;
+	padding-top:20px;
 	position: fixed;
 	left: 0;
-	height: 0%;
-	top: 50px;
+	height: 0px;
+	top: -100%;
 	width: 100%;
 	z-index: 1550;
+	transition: top .3s ,transform .2s .1s,opacity .2s .1s;
+	opacity: 0;
+}
+#wspan{
+	height:0px;
+	width:100%;
 }
 #win.open,#toppanel.open{
 	display:block;
 }
+#wdatel,#wpass,#wnuml{
+	display: inline-block;
+	width: 29%;
+	padding-left:10%;
+	/* text-align: center; */
+	color: #eee;
+	font-size: 30px;
+	font-family: inset;
+}
+#wchl,#wtagsl{
+	display: inline-block;
+	padding-left:10%;
+	padding-top:30px;
+	width: 99%;
+	color: #eee;
+	font-size: 30px;
+	font-family: inset;
+}
+#wdescl{
+	display: inline-block;
+	padding-left:10%;
+	padding-top:30px;
+	width: 99%;
+	color: #eee;
+	font-size: 30px;
+	font-family: inset;
+}
+#win input{
+	font-family:inset,Helvetica,Serif-sens;
+	display:inline-block;
+	max-width:40%;
+	padding:0 10px;
+	height:30px;
+	font-size:25px;
+	border:0;
+	color:#eee;
+	background-color:#888;
+	cursor:pointer;
+}
+#wchl input,#wtagsl input{
+	width:60%;
+	cursor:pointer;
+}
+#win textarea{
+	font-family:inset,Helvetica,Serif-sens;
+	display:inline-block;
+	min-height:290px;
+	width:80%;
+	max-height:1000px;
+	padding:0 10px;
+	height:30px;
+	font-size:25px;
+	border:0;
+	color:#eee;
+	background-color:#888;
+	cursor:pointer;
+	resize:vertical;
+}
+#win textarea:read-only,#win input:read-only{
+	cursor:default;
+}
+#topdelite,#topadd,#topedit,#topback,#topsave{
+	height:40px;
+	display:inline-block;
+	padding-top:10px;
+	text-align:center;
+	min-width:100px;
+	max-width:150px;
+	color: #eee;
+	font-size: 26px;
+	font-family: inset;
+}	
+#topback{
+	padding-right:10px;
+}
+#topdelite,#topadd,#topedit,#topsave{
+	float:right;
+	min-width:50px;
+	max-width:100px;
+}
+#toppanel div:hover{
+	background-color:#555;
+	cursor:pointer;
+}
+#toppanel div:active{
+	background-color:#4CAF50;
+}
+
 /* -------------------------------------------------------------------------------------- */
 /* ----------------------------------------------FOOTER-------------------------------- */
 /* -------------------------------------------------------------------------------------- */
-footer{
-	position:absolute;
-	width:100%;
-	height:25%;
-	padding-top:12%;
-	left:0%;
-	text-align:center;
-	background-color:#333;
-	z-index:101;
-}
-@font-face {
-    font-family: inset;
-    src: url(fonts/PFSquareSansPro-Light.ttf);
-}
+/* ----- footer in gen.css ----- */
 /* ---------------------------------- MOBILE SCREEN -------------------------- */
 @media only screen and (max-width:700px) {
-
 #profile{
 	display:block;
 	padding:0 5%;
@@ -190,11 +409,42 @@ footer{
 	float:right;
 	height:100px;
 }
+#table h1 {
+	margin-top: 20px;
+}
+.settinputs{
+	padding: 3% 3%;
+}
+.settings h1 {
+	margin-top: 20px;
+}
+.settinputs h1 {
+	margin-top: 20px;
+}
+#wdatel,#wnuml,#wpass{
+	display:inline-block;
+	width:90%;
+}
+#wspan{
+	min-height:400px;
+	width:100%;
+}
+#sett-bg{
+	overflow:visible;
+}
+#arrtop{
+	left:80%;
+	width:20%;
+}
+#ajxprcs{
+	left:80%;
+	width:20%;
+}
 footer{
 	width:100%;
 	left:0%;
 }
 }
 /* ------------------------------- SPETIAL SIZE ---------------------------------*/
-@media only screen and (max-width:1170px) {
+@media only screen and (max-width:Xpx) {
 }

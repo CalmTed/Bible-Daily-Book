@@ -1,0 +1,159 @@
+#content{
+	margin-top: 0;
+}
+.topbtn{
+	font-size: 20pt;
+	margin: 2%;
+	color: #fefefe;
+	position: fixed;
+	transition:color .1s;
+}
+.topbtn:hover{
+	cursor:pointer;
+	color:#aaa;
+}
+#regback{
+	
+}
+#reguser{
+	top: 0;
+	text-align: right;
+	max-width: 15%;
+	left: 88%;
+}
+h1{
+	font-size: 2.5pc;
+	text-align: center;
+	color: #f1f1f1;
+	font-weight: lighter;
+	margin: 0;
+	padding-top: 3%;
+}
+#reg-inps{
+	font-size: 25px;
+	padding: 5% 14% 5% 25%;
+	color: #f1f1f1;
+	margin-bottom: 0;
+}
+#reg-inps label{
+	width: 100%;
+	display: inline-block;
+	margin: 10px 5px;
+}
+input:hover{
+	opacity:.8;
+}
+input:focus{
+	opacity:.9;
+}
+.right{
+	float:right;
+	margin-right:20%;
+}
+.checkbox input{
+	display:none;
+}
+.checkbox{
+	cursor:pointer;
+	font-size: 86%;
+	width:auto;
+	display:inline;
+}
+.checkbox:hover> span{
+	opacity:.9;
+}
+.checkbox span{
+	background: #888;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+	display: inline-block;
+	border: 2px solid #888;
+
+}
+.checkbox span:before{
+	opacity:0;
+	content: '';
+	width: 0%;
+	height: 0%;
+	transition:opacity .1s;
+}
+.checkbox span:after{
+	opacity:0;
+	content: '';
+	width: 0%;
+	height: 0%;
+	transition:opacity .1s;
+}
+#agree:checked + span:before{
+	opacity:1;
+	content: '';
+	width: 63%;
+	height: 20%;
+	background: #f1f1f1;
+	position: relative;
+	display: block;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	transform: rotateZ(40deg) translateY(121%) translateX(41%);
+}
+#agree:checked + span:after{
+	opacity:1;
+	content: '';
+	width: 120%;
+	height: 20%;
+	background: #f1f1f1;
+	position: relative;
+	display: block;
+	border-radius: 2px;
+	transform: rotateZ(-50deg) translateY(81%) translateX(21%);
+}
+#reg-submit:focus{
+	opacity:.8;
+}
+#reg-submit:hover{
+	opacity:.9;
+}
+#reg-submit{
+	padding: 1% 4%;
+	float: right;
+	margin-right: 19%;
+}
+#reg-submit:disabled{
+	color:#999;
+	cursor:default;
+}
+#reg-submit:disabled:hover{
+	opacity:1;
+}
+#reg-inps small{
+	text-align:center;
+	display: block;
+	margin-right: 19.2%;
+	margin-bottom: 3%;
+	background: #FFEB3B;
+	color: #555;
+}
+@media only screen and (max-width:700px) {
+	#reg-inps{
+		padding: 5%;
+		text-align:center;
+	}
+	#reg-inps small{
+		margin-right:0;
+	}
+	#reg-inps label{
+		text-align:left;
+	}
+	.right{
+		margin-right: 0%;
+	}
+	#reg-submit{
+		float:none;
+		margin-right: 0;
+		max-width: 90%;
+	}
+	.topbtn{
+		position: absolute;
+	}
+}

@@ -1,0 +1,117 @@
+/* faq.css */
+#content{
+	margin-top:0;
+	min-height:500px;
+	text-align:center;
+	padding-top:50px;
+	color:#eee;
+}
+.topbtn{
+	font-size: 20pt;
+	margin: -1% 2%;
+	color: #fefefe;
+	position: fixed;
+	transition:color .1s;
+}
+.topbtn:hover{
+	cursor:pointer;
+	color:#aaa;
+}
+h1{
+	font-weight:300;
+	margin:0;
+	margin-bottom:20px;
+}
+h2{
+	margin: 0;	
+}
+#f-menu{
+	position: fixed;
+	width: 18%;
+	top:auto
+	height: auto;
+	background: #777;
+	left: 1%;
+	text-align:center;
+	padding:1%;
+	transition:top .3s;
+}
+#f-menu a{
+	text-decoration:none;
+	font-size:1.1pc;
+	display:inline-block;
+	width:100%;
+}
+#f-menu a:hover{
+	text-decoration:underline;
+}
+#f-answers{
+	position: relative;
+	width: 56%;
+	min-height: 500px;
+	background: #777;
+	left: 22%;
+}
+a{
+	color:#eee;
+	text-decoration:underline;
+}
+a:hover{
+	text-decoration:none;
+}
+
+#search{
+	width:80%;
+	display:inline-block;
+	height:40px;
+	text-align:left;
+	margin-top:15px;
+}
+#search-inp{
+	max-width: 900%;
+	height: 100%;
+	width: 88%;
+	position: relative;
+	display: inline-block;
+	padding: 0 1%;
+}
+#search-go{
+	width: 10%;
+	padding: 0;
+	margin: 0;
+	float: right;
+	border: 0;
+	height: 100%;
+	background-color:#8f8f8f;
+}
+#search-go:hover{
+	background-color:#969696;
+	cursor:pointer;
+}
+#search-go:active{
+	background-color:#9f9f9f;
+	color:#eee;
+}
+#blocks{
+	text-align:center;
+	padding-top:20px;
+}
+.bl{
+	display:inline-block;
+	width:80%;
+	text-align:left;
+}
+.bl p{
+	text-align:justify;
+	font-size:1.2pc;
+}
+#donation{
+	position: relative;
+	z-index: 102;
+	height: 100px;
+}
+@media only screen and (max-width:700px) {
+	.topbtn{
+		position: absolute;
+	}
+}

@@ -9,13 +9,15 @@
 		if (empty($user['pass'])){
 			$ar["return"] = "user verification: denied";
 		}else{
-			if ($user['pass'] == $_POST['pass']){
+			if(password_verify($_POST['pass'], $user['pass'])){
 				if(isset($_POST['id'])){
 					$id = $_POST['id'];
 					$table = $user['num'];
 					$query = "DELETE FROM `".$table."` WHERE `".$table."`.`id` = ".$id;
 					$result = $con->query($query) or die($con->error.__LINE__);
 					mysqli_close($con);
+					session_start();
+					$_SESSION['num'] = $user['num'];
 					$ar["return"] = "deliting: success";
 				}else{
 					$ar["return"] = "deliting: ERROR! post id isnt set";

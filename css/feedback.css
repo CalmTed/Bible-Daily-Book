@@ -1,0 +1,90 @@
+/* feedback.css */
+#content{
+	margin-top:0;
+	min-height:500px;
+	text-align:center;
+	padding-top:50px;
+	color:#eee;
+}
+.topbtn{
+	font-size: 20pt;
+	margin: -1% 2%;
+	color: #fefefe;
+	position: fixed;
+	transition:color .1s;
+}
+.topbtn:hover{
+	cursor:pointer;
+	color:#aaa;
+}
+h1{
+	font-weight:300;
+	margin: 0;
+}
+.p{
+	display:inline-block;
+	margin:0;
+	width:40%;
+	font-size:1.5pc;
+}
+.p p{
+	text-align:justify;
+}
+.p label{
+	min-height:30px;
+	width:100%;
+	display: block;
+}
+.p span{
+	float:left;
+	margin-top:20px;
+}
+.p input,.p select{
+	float:right;
+	margin-top:20px;
+}
+.p select{
+	width:40%;
+	font-family:inset, Helvetica;
+	font-size:90%;
+	border:0;
+}
+.p select:focus{
+	ouline:0;
+}
+.p label.hidden{
+	display:none;
+}
+.p textarea{
+	width:100%;
+	min-height:200px;	
+}
+#f-submit{
+	font-family:inset, Helvetica;
+	width:50%;
+	background:#888;
+	border:0;
+	color:#eee;
+	font-size:1.3pc;
+	height:30px;
+}
+#f-submit:hover{
+	background-color:#999;
+	cursor:pointer;
+}
+#f-submit:active{
+	background-color:#aaa;
+}
+#donation{
+	position: relative;
+	z-index: 102;
+	height: 100px;
+}
+@media only screen and (max-width:700px) {
+	.topbtn{
+		position: absolute;
+	}
+	.p{
+		width:90%;
+	}
+}

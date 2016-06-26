@@ -1,0 +1,123 @@
+header{
+	background: transparent;
+	position: fixed;
+	width: 100%;
+	z-index: 1200;
+	height: 50px;
+	color: #eee;
+	font-size: 20pt;
+}
+header a{
+	text-decoration:none;
+	padding:10pt 20pt;
+	opacity:1;
+	transition:opsity .3s;
+}
+header a:hover{
+	opacity:.6;
+}
+#iuser{
+	float:right;
+}
+ilang{
+	float:left;
+}
+#logo{
+	position: relative;
+	z-index: 300;
+	width: 6%;
+	left: 38%;
+	display: inline-block;
+	transition:width .2s, left .2s;
+}
+#logo img{
+	width: 100%;
+	margin-bottom:-25%;
+}
+#sitename{
+	margin-bottom: 200px;
+}
+#sitename span{
+	color: #f1f1f1;
+	font-size: 4pc;
+	position: relative;
+	margin-top: 198px;
+	left: 38%;
+	z-index: 1000;
+	display: inline-block;
+	transition:width .3s, left .3s;
+}
+#content{
+	margin-top: 10px;
+	color: #f1f1f1;
+	font-size: 1.5pc;
+	padding: 50px 100px;
+}
+#threeelefant{
+	margin-top:50px;
+	text-align: center;
+}
+#threeelefant ul{
+	padding: 0;
+}
+#threeelefant ul li{
+	list-style: none;
+	display: inline-block;
+	width: 32%;
+	transition:width .2s;
+}
+#threeelefant ul li img{
+	width: 40%;
+	display: inline-block;
+}
+#threeelefant ul li b{
+	float: left;
+	position: relative;
+	width: 100%;
+}
+#threeelefant ul li small{
+	width: 100%;
+	float: left;
+}
+#reg-area{
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+#reg-button{
+	border: 2px solid #f1f1f1;
+	border-radius: 4px;
+	display: inline-block;
+	font-size: 2pc;
+	padding: 10px;
+	width: 40%;
+	background-color:transparent;
+	transition: background .3s, color .3s;
+	color:#f1f1f1;
+}
+#reg-button:hover{
+	background-color:#f1f1f1;
+	color:#555;
+	cursor:pointer;
+}
+
+@media only screen and (max-width:970px) {
+	#content{
+		padding: 50px 10px;
+	}
+	#reg-button{
+		width: 70%;
+	}
+	#threeelefant ul li{
+		width: 90%;
+	}
+	#logo{
+		position: relative;
+		z-index: 300;
+		width: 15%;
+		left: 10%;
+	}
+	#sitename span{
+		left: 15%;
+	}
+}
