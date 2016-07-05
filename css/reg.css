@@ -2,43 +2,42 @@
 	margin-top: 0;
 }
 .topbtn{
+	color: #fefefe;
 	font-size: 20pt;
 	margin: 2%;
-	color: #fefefe;
 	position: fixed;
 	transition:color .1s;
 }
 .topbtn:hover{
-	cursor:pointer;
 	color:#aaa;
+	cursor:pointer;
 }
 #regback{
 	
 }
 #reguser{
+	right: 2%;
 	top: 0;
 	text-align: right;
-	max-width: 15%;
-	left: 88%;
 }
 h1{
-	font-size: 2.5pc;
-	text-align: center;
 	color: #f1f1f1;
+	font-size: 2.5pc;
 	font-weight: lighter;
 	margin: 0;
 	padding-top: 3%;
+	text-align: center;
 }
 #reg-inps{
-	font-size: 25px;
-	padding: 5% 14% 5% 25%;
 	color: #f1f1f1;
+	font-size: 25px;
 	margin-bottom: 0;
+	padding: 5% 14% 5% 25%;
 }
 #reg-inps label{
-	width: 100%;
 	display: inline-block;
 	margin: 10px 5px;
+	width: 100%;
 }
 input:hover{
 	opacity:.8;
@@ -51,62 +50,65 @@ input:focus{
 	margin-right:20%;
 }
 .checkbox input{
-	display:none;
+	/* display:none; */
+	width: 20px;
+	display: inline-block;
+	height: 20px;
 }
 .checkbox{
 	cursor:pointer;
-	font-size: 86%;
-	width:auto;
 	display:inline;
+	font-size: 74%;
+	width:auto;
 }
 .checkbox:hover> span{
 	opacity:.9;
 }
 .checkbox span{
 	background: #888;
-	width: 15px;
-	height: 15px;
-	margin-right: 5px;
-	display: inline-block;
 	border: 2px solid #888;
-
+	height: 15px;
+	display: inline-block;
+	margin-right: 5px;
+	width: 15px;
+	display:none;
 }
 .checkbox span:before{
-	opacity:0;
 	content: '';
-	width: 0%;
 	height: 0%;
+	opacity:0;
 	transition:opacity .1s;
+	width: 0%;
 }
 .checkbox span:after{
-	opacity:0;
 	content: '';
-	width: 0%;
 	height: 0%;
+	opacity:0;
 	transition:opacity .1s;
+	width: 0%;
 }
 #agree:checked + span:before{
-	opacity:1;
-	content: '';
-	width: 63%;
-	height: 20%;
 	background: #f1f1f1;
-	position: relative;
-	display: block;
-	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
+	border-top-left-radius: 2px;
+	content: '';
+	display: block;
+	height: 20%;
+	position: relative;
+	opacity:1;
 	transform: rotateZ(40deg) translateY(121%) translateX(41%);
+	width: 63%;
 }
 #agree:checked + span:after{
-	opacity:1;
-	content: '';
-	width: 120%;
-	height: 20%;
 	background: #f1f1f1;
-	position: relative;
-	display: block;
 	border-radius: 2px;
+	content: '';
+	display: block;
+	height: 20%;
+	position: relative;
+	opacity:1;
 	transform: rotateZ(-50deg) translateY(81%) translateX(21%);
+	width: 120%;
 }
 #reg-submit:focus{
 	opacity:.8;
@@ -115,9 +117,9 @@ input:focus{
 	opacity:.9;
 }
 #reg-submit{
-	padding: 1% 4%;
 	float: right;
 	margin-right: 19%;
+	padding: 1% 4%;
 }
 #reg-submit:disabled{
 	color:#999;
@@ -127,12 +129,12 @@ input:focus{
 	opacity:1;
 }
 #reg-inps small{
-	text-align:center;
-	display: block;
-	margin-right: 19.2%;
-	margin-bottom: 3%;
 	background: #FFEB3B;
 	color: #555;
+	display: block;
+	margin-bottom: 3%;
+	margin-right: 19.2%;
+	text-align:center;
 }
 @media only screen and (max-width:700px) {
 	#reg-inps{
@@ -155,5 +157,8 @@ input:focus{
 	}
 	.topbtn{
 		position: absolute;
+	}
+	h1{
+		padding-top: 50px;
 	}
 }

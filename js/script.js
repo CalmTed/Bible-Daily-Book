@@ -6,9 +6,10 @@ start = function() {//main function
 	clickbletr();//clickable tr and some more
 	hash();	//check page hash
 	$('head').append('<style>#progbar:before{width: '+ $('#info').attr('percent') +'%;}</style>');
+	$('#progbar').attr('title',$('#info').attr('percent')+'%')
 	$('#times').text($('#info').attr('times'));
 	$('.tablreload').on('click',function(){
-		if($('#btbuttons').attr('tab') == 'sett'){
+		if($('#btbuttons').attr('tab') != 'list'){
 			tab('list');
 		}else{
 			reload();
@@ -30,16 +31,23 @@ start = function() {//main function
 	$('.tablsett').on('click',function(){
 		tab('sett');
 	});
+	$('.tablsearch').on('click',function(){
+		tab('search');
+	});
 	$('#topback').click(function(){
 		win('close');
 		$('head title').html('BibleDiary');
 		if($('#wid').val() == 'none'){
 			
 		}else{
-			win('clear');
-			location.hash = 'list';
+			if(tab() == 'search'){
+				
+			}else{
+				location.hash = 'list';
+			}
 			$('#topadd').show();
 			$('#topdelite').show();
+			win('clear');
 		}
 		win('nedit');
 		$('#wpass').hide();
@@ -90,8 +98,8 @@ start = function() {//main function
 		}
 	});
 	if(location.hash == '#first'){
-		location.hash = 'second';
 		info('show','Хочешь почитать инструкцию к сайту?',2,0,true,'*',function(r){
+			location.hash = 'second';
 			if(r == 'yes'){
 				location.href="faq.php"
 			}else{
@@ -106,15 +114,21 @@ start = function() {//main function
 			}
 		})
 	}else if(location.hash == '#second'){
-		location.hash = '';
-		info('none','Хочешь поставить аватарку?',2,0,false,'*',function(r){
+		info('show','Хочешь поставить аватарку?',2,0,false,'*',function(r){
+			location.hash = '';
 			if(r == 'yes'){
 				location.hash = 'settings';
-			$(window).scrollTop($(window).height());
+				$(window).scrollTop($(window).height());
 			}else{
 				location.hash = '';				
 			}
 		});
+	}else if(location.hash == '#verif'){
+		info('show','Адрес эл. почты подтвержден',1,4000);
+		location.hash = ''
+	}
+	if(typeof scale !== 'undefined'){
+		scale();
 	}
 }//end main function
 win = function(c){
@@ -167,7 +181,6 @@ ajaxscript = function(c){
 		link = "php/deliteline.php";
 	}else{
 		link = "php/editline.php";
-		location.hash = 'r'+$('#wid').val();
 	}
 	objs = {
 		"id" : $('#wid').val(),
@@ -203,6 +216,7 @@ ajaxscript = function(c){
 				default :console.log('some other error!');break;
 			}
 			if(ret == 'insert success'||ret == 'update success'||ret == 'deliting: success'){
+				location.hash = 'r'+$('#wid').val();
 				$('#wid').val('');
 				$('#wdate').val('');
 				$('#wnumber').val('');
@@ -251,8 +265,8 @@ reload = function(c){
 			if(ret = 'success'){
 				var i,num,curId,curDate,curChap,curChaps,curNum,curShort,curShorts;
 				num = arr['num'];
-				$('#table table').html('');
-				$('#table table').append('<tr class="th"><th style="width:10%;">Дата</th><th>Главы</th><th style="width:10%;">Кол-во</th><th style="width:40%;">Описание</th></tr>');
+				$('#table .div-table').html('');
+				$('#table .div-table').append('<div class="th"><div>Дата</div><div>Главы</div><div>Кол-во</div><div>Описание</div></div>');
 				if(num > 0){
 					for (i = 0; i < num ; i++){
 						curId = arr["id_" + i];
@@ -261,22 +275,23 @@ reload = function(c){
 						curTag = arr["t_" + i];
 						curNum = arr["n_" + i];
 						curShort = arr["s_" + i];
-						if(curChap.length > 41){
-							curChaps = curChap.slice(0, 25)+'...';
-						}else{
-							curChaps = curChap;
-						}
-						if(curShort.length > 41){
-							curShorts = curShort.slice(0, 25)+'...';
-						}else{
-							curShorts = curShort;
-						}
-						
-						$('#table table').append('<tr num="'+curId+'" id="r'+curId+'"><td style="display:none" class="t">'+curTag+'</td><td class="d">'+curDate+'</td><td class="c" full="'+curChap+'">'+curChaps+'</td><td class="n">'+curNum+'</td><td class="s" full="'+curShort+'">'+curShorts+'</td></tr>');
+						$('#table .div-table').append('<div class="tr" num="'+curId+'" id="r'+curId+'">'
+						+'<div style="display:none" class="t">'+curTag+'</div>'
+						+'<div class="d">'+curDate+'</div>'
+						+'<div class="c">'+curChap+'</div>'
+						+'<div class="n">'+curNum+'</div>'
+						+'<div class="s">'+curShort+'</div>'
+						+'</div>');
 							
 					}
 				}else{
-					$('#table table').append('<tr num="1" class="tradd"><td class="d"></td><td class="c" full="">Добавить запись</td><td class="n"></td><td class="s" full="пусто"></td></tr>');
+					$('#table .div-table').append('<div class="tr tradd" num="1">'
+					+ '<div style="display:none" class="t"></div>'
+					+ '<div class="d"></div>'
+					+ '<div class="c" full="">Добавить запись</div>'
+					+ '<div class="n"></div>'
+					+ '<div class="s" full=""></div>'
+					+ '</div>');
 				}
 				$('#tlevel').html(arr["level"]);
 				$('#tallchap').html(arr["nt"]);
@@ -294,35 +309,35 @@ reload = function(c){
 	})
 	}
 }
-wwin = function(id,d,c,n,s){
-	//console.log('Open win num:'+id);
+wwin = function(id,d,c,n,s,t){
 	$('#wid').val(id);
 	$('#wdate').val(d);
 	$('#wnumber').val(n);
 	$('#wchapters').val(c);
-	$('#wtags').val(t);
-	$('#wdescription').val(s);
 	$('#wdescription').html(s);
+	$('#wdescription').val(s);
+	$('#wtags').val(t);
 }
 clickbletr = function(){
-	$('tr').on('click',function(){
+	var n;
+	$('.tr').on('click',function(){
 		$('.th').click(function(){
 			return false;
 		});
 		if($(this).attr('num')){
 			n = $(this).attr('num');
 			//console.log(n);
+		}else{
+			return false;
 		}
-	});
-	$('tr td').on('click',function(){
 		thtd = $(this);//able to click
 		opentd = function(zis){
-			id = zis.parents('tr').attr('num');
-			d = zis.parents('tr').children('.d').text();
-			c = zis.parents('tr').children('.c').attr('full');
-			t = zis.parents('tr').children('.t').text();
-			n = zis.parents('tr').children('.n').text();
-			s = zis.parents('tr').children('.s').attr('full');
+			id = zis.attr('num');
+			d = zis.children('.d').text();
+			c = zis.children('.c').text();
+			t = zis.children('.t').text();
+			n = zis.children('.n').text();
+			s = zis.children('.s').text();
 			wwin(id,d,c,n,s,t);
 			win('open');
 			$('#win input').on('dblclick',function(){
@@ -338,7 +353,7 @@ clickbletr = function(){
 				$(this).removeAttr('readonly').focus();
 			});
 		}
-		if($('tr[class = tradd]').length>0){
+		if($('.tr[class = tradd]').length>0){
 				$('.tablnew').trigger('click');
 			}else{
 			if($('#wid').val() == 'none'){
@@ -346,6 +361,10 @@ clickbletr = function(){
 					if(r == 'no'){
 						//dont open
 					}else{
+						$('#topadd').show();
+						$('#topdelite').show();
+						$('#topedit').show();
+						$('#topsave').hide();
 						opentd(thtd);
 					}
 				},thtd);
@@ -575,6 +594,9 @@ savingsettings = function(){
 						default :console.log('some other error!');break;
 					}
 					if(ret == 'done'){
+						$('#name').html($('#sett-name').val());
+						//$('#passinp').val('');
+						//$('#password').val('');
 						if(arr['verif'] == 'new'){
 							info('show','Настройки сохранены. Проверь почту для подтвержнения нового адресса.');
 						}else{
@@ -606,6 +628,10 @@ tab = function(n){
 									$('.settinputs').remove();}
 									$('head title').html('BibleDiary');
 									$('.tablsett').show();break;
+				case 'search':if($('.search').length >0 ){
+									$('.search').hide();}
+									$('head title').html('BibleDiary');
+									$('.tablsearch').show();break;
 			}
 			//showing needed tab
 			switch(n){
@@ -623,6 +649,20 @@ tab = function(n){
 									$('.settings').append('<h1>Настройки:</h1><label id="settlbl">Пароль:<input type="password" ></label><button class="settchckpass" onClick="checksettpass()"><i class="fa fa-angle-right"></i></button>');
 								}else{
 									$('.settings').show();
+								}break;
+				case 'search' : location.hash = 'search';
+								$('.tablsearch').hide();
+								$('#btbuttons').attr('tab','search');
+								$('head title').html('Поиск - BibleDiary');
+								$('.tablreload i').removeClass(' fa-repeat').addClass('fa-list-ul');
+								if($('.search').length == 0){
+									$('#btbuttons').after('<div class="search"></div>');
+									$('.search').append('<h1>Поиск:</h1>'
+									+'<div class="srchinp"><input type="text" class="srchinput"><button class="srchbtn"><i class="fa  fa-search"></i></button></div>'
+									+'<div class="srchtable"></div>');
+									srchbtn();
+								}else{
+									$('.search').show();
 								}break;
 			}
 		}
@@ -644,5 +684,60 @@ winnew = function(){
 	}else{
 		
 	}
+}
+srchbtn = function(){
+	$('.srchinput').keyup(function(){
+		st = $('.srchinput').val();//search text
+		if(st.length>0){
+			$('.srchtable').html('<div class="sth"><div>Дата</div><div>Текст</div></div>');
+			//$('.srchtable').append('<div class="th"><div>Дата</div><div>Текст</div></div>');
+			n=0;
+			$('.div-table .tr').each(function(){
+				t = $(this).children('.t').text();
+				s = $(this).children('.s').text();
+				c = $(this).children('.c').text();
+				t = t+s+c;
+				if(t.indexOf(st)>-1){
+					d = $(this).children('.d').text();//date
+					fc = t.indexOf(st);//first coins^%&
+					if($(window).width()>720){
+						pt = 50//padding of result text						
+					}else{
+						pt = 20
+					}
+					sth = '<span class="hl">'+st+'</span>';
+					if(fc > pt){
+						bt = '...'+t.slice(fc-pt,fc);//before t
+					}else{
+						bt = t.slice(0,fc);
+					}
+					if(t.length - fc > pt){
+						at = t.slice(fc+st.length,(fc+pt))+'...';//after t
+					}else{
+						at = t.slice(fc+2);
+					}
+					// t = t.replace(st,'<span class="hl">'+st+'</span>');
+					$('.srchtable').append('<div class="str ctr" num="'+$(this).attr('num')+'"><div>'+d+'</div><div>'+bt+sth+at+'</div></div>');
+				n++;
+				}
+			});
+			if(n==0){
+				$('.srchtable').append('<div class="str"><div></div><div>Совпадений не найдено</div></div>');
+			}
+			$('.ctr').on('click',function(){
+				if($('#wid').val() == 'none'){
+				thtd = $(this);
+				info('show','Стереть несохраненную новую запись?',2,0,false,'*',function(r,thtd){
+					if(r == 'no'){
+					}else{
+						location.hash = 'o'+thtd.attr('num');
+					}
+				},thtd);
+				}else{
+					location.hash = 'o'+$(this).attr('num');
+				}
+			});
+		}
+	});
 }
 $(document).ready(function(){start()});

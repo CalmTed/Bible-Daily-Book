@@ -4,7 +4,6 @@
 //its a >12 hours of work here
 gen = function() {//main function
 	inforet = '',//info return
-	scale();
 	ajxprcs = false;
 	$(window).bind('hashchange', function(){//when hesh changing
 		hash();	
@@ -19,13 +18,22 @@ gen = function() {//main function
 		}else if(scroll<5000 && $('#arrtop.show').length>0){
 			$('#arrtop').removeClass('show');
 		}
+		if(scroll>$(window).height()+($('#btbuttons').height()*2)+($('#teble h1').height()*2)){
+			$('#table .th').css('position','fixed');
+			$('#table .tr:nth-child(2)').css('margin-top','70px');
+		}else{
+			$('#table .th').css('position','relative');
+			$('#table .tr:nth-child(2)').css('margin-top','0px');
+		}
 	});
 	$('#arrtop').click(function(){//scroll top button
 		$("body,html").animate({scrollTop:0}, 1000);
 	});
 	$(window).click(function(){//ajax processing indicator
 		ajxprcsf();
-	})
+	});
+	scale();
+
 }//end main function
 scale = function(){
 	if($(window).width() > 700){//for PS screen
@@ -45,7 +53,8 @@ scale = function(){
 	
 	//content
 	path = location.pathname;
-	dir = '/1/pr/10/';
+	//dir = '/1/pr/10/';//for localhost
+	dir = '/';
 	if(path == dir+'u.php'||path  == dir+''){//for index and user.php only
 		$('#content').css('margin-top',$(window).height()-$('#profile').height());
 	}
@@ -132,6 +141,9 @@ hash = function(){
 	if(h!=''){
 		switch(h){
 			case '#settings':tab('sett');break;
+			case '#search':tab('search');break;
+			case '#first':break;
+			case '#second':break;
 			case '#onone':h = '#new';
 			case '#new':$('#wid').val('none');
 								$('#wdate').val($('#info').attr('date'));
@@ -152,12 +164,17 @@ hash = function(){
 		if(sh == 'o' && h != '#onone' && hn != ''){
 			id = $('#r'+hn).attr('num');
 			d = $('#r'+hn).children('.d').text();
-			c = $('#r'+hn).children('.c').attr('full');
+			c = $('#r'+hn).children('.c').text();
 			t = $('#r'+hn).children('.t').text();
 			n = $('#r'+hn).children('.n').text();
-			s = $('#r'+hn).children('.s').attr('full');
+			s = $('#r'+hn).children('.s').text();
 			wwin(id,d,c,n,s,t);
 			win('open');
+		}
+		if(h == '#rnone'){
+			$('.tablnew').css('color','#eee');
+		}else{
+			$('.tablnew').css('color','inherit');
 		}
 	}else{
 		if(location.pathname == '/1/pr/10/u.php'){
@@ -178,7 +195,6 @@ ajxprcsf = function(mode,sender){//ajax procesing function
 			}else{
 				$('#ajxprcs').addClass('show');
 				if(tab() == 'sett'){//sett auth
-					console.log('tab == sett');
 					$('.settchckpass i').addClass('fa-pulse').addClass('fa-spinner');
 				}
 			}
@@ -186,15 +202,17 @@ ajxprcsf = function(mode,sender){//ajax procesing function
 		if(sender == 'r'){//r - reload
 			$('.tablreload i').addClass('fa-spinner').addClass('fa-pulse');
 		}
-	}else{//hiding laodings
-		if($('#ajxprcs').length>0){
-			$('#ajxprcs').removeClass('show');
-		}
-		if(tab() == 'sett'){//sett auth
-			$('.settchckpass i').removeClass('fa-pulse').removeClass('fa-spinner');
-		}
-		if(sender == 'r'){//r - reload
-			$('.tablreload i').removeClass('fa-spinner').removeClass('fa-pulse');
+	}else{//hiding loadings
+		if(typeof tab !== 'undefined'){
+			if($('#ajxprcs').length>0){
+				$('#ajxprcs').removeClass('show');
+			}
+			if(tab() == 'sett'){//sett auth
+				$('.settchckpass i').removeClass('fa-pulse').removeClass('fa-spinner');
+			}
+			if(sender == 'r'){//r - reload
+				$('.tablreload i').removeClass('fa-spinner').removeClass('fa-pulse');
+			}
 		}
 	}
 	

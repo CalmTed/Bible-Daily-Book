@@ -63,7 +63,7 @@ valid = function(){
 	}
 	t = $('#reg-inps small');
 	s = $('#reg-submit');
-	/*if(v==0){
+	if(v==0){
 		text = '';
 		t.text('');
 		t.css('opacity','0');
@@ -72,6 +72,6 @@ valid = function(){
 		t.text(text);
 		t.css('opacity','1');
 		s.attr('disabled','disabled');
-	}*/
+	}
 }
 $(document).ready(function(){onstart()});

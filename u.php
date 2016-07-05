@@ -36,7 +36,7 @@
 						$us['bg'] = $user['bg'];
 						//$us['link'] = $user['link'];
 					}
-					$query = "SELECT * FROM `".$name."` ORDER BY `id` DESC LIMIT 0, 150";
+					$query = "SELECT * FROM `notes` WHERE `user` = '".$name."' ORDER BY `id` DESC LIMIT 0, 150";
 					$result = $con->query($query) or die($con->error.__LINE__);
 					mysqli_close($con);
 				}else{
@@ -53,7 +53,7 @@
 					}
 					
 					
-					$query = "SELECT * FROM `u` ORDER BY `id` DESC LIMIT 0, 150";
+					$query = "SELECT * FROM `notes` WHERE `user` = '".$name."' ORDER BY `id` DESC LIMIT 0, 150";
 					$result = $con->query($query) or die($con->error.__LINE__);
 					mysqli_close($con);
 				}
@@ -83,61 +83,55 @@
 		<div id="progbar"></div>
 	</div>
 	<div id="btbuttons" tab="list">
+		<div class="btbutton tablnew"><i class="fa  fa-plus"></i></div>
 		<div class="btbutton tablreload"><i class="fa fa-repeat"></i></div>
-		<div class="btbutton tablnew"><i class="fa  fa-plus"></i></div><!--  fa-inverse -->
 		<div class="btbutton tablsett"><i class="fa  fa-gear"></i></div>
+		<div class="btbutton tablsearch"><i class="fa  fa-search"></i></div>
 	</div>
 	<div id="table">
-	<table  border="0">
-		<tr class="th">
-			<th style="width:10%;">Дата</th>
-			<th>Главы</th>
-			<th style="width:10%;">Кол-во</th>
-			<th style="width:40%;">Описание</th>
-	   </tr>
+	<h1>Список прочитанного:</h1>
+	<div class="div-table"  border="0">
+		<div class="th">
+			<div>Дата</div>
+			<div>Главы</div>
+			<div>Кол-во</div>
+			<div>Описание</div>
+	   </div>
 				<?php
 				$i = 13;
 				$n = 0;
 				while ($row = $result->fetch_assoc()) {
-					echo '<tr num="'.$row['id'].'" id="r'.$row['id'].'">';
-					echo '<td style="display:none" class="t">'.$row['tags'].'</td>';
-					echo '<td class="d">'.$row['d'].'</td>';
-					if(strlen($row['c']) >= 50){
-						echo '<td class="c" full="'.$row['c'].'">'.substr($row['c'], 0, 40).'...</td>';
-					}else{
-						echo '<td class="c" full="'.$row['c'].'">'.substr($row['c'], 0, 40).'</td>';
-					}
-					echo '<td class="n">'.$row['n'].'</td>';
-					if(strlen($row['s']) >= 40){
-						echo '<td class="s" full="'.$row['s'].'">'.substr($row['s'], 0, 25).'...</td>';
-					}else{
-						echo '<td class="s" full="'.$row['s'].'">'.substr($row['s'], 0, 25).'</td>';
-					}
-					echo '</tr>';
+					echo '<div class="tr" num="'.$row['id'].'" id="r'.$row['id'].'">';
+					echo '<div style="display:none" class="t">'.$row['tags'].'</div>';
+					echo '<div class="d">'.$row['d'].'</div>';
+					echo '<div class="c">'.$row['c'].'</div>';
+					echo '<div class="n">'.$row['n'].'</div>';
+					echo '<div class="s">'.$row['s'].'</div>';
+					echo '</div>';
 					$n += $row['n'];
 					$i++;
 				}
 				if($i == 13){
-					echo '<tr num="1" class="tradd">';
-					echo '<td style="display:none" class="t"></td>';
-					echo '<td class="d"></td>';
-					echo '<td class="c" full="">Добавить запись</td>';
-					echo '<td class="n"></td>';
-					echo '<td class="s" full=""></td>';
-					echo '</tr>';
+					echo '<div class="tr tradd" num="1">';
+					echo '<div style="display:none" class="t"></div>';
+					echo '<div class="d"></div>';
+					echo '<div class="c">Добавить запись</div>';
+					echo '<div class="n"></div>';
+					echo '<div class="s"></div>';
+					echo '</div>';
 				}
-				echo '<h1>Список прочитанного:</h1>';
 				if($n > 1189){
 					$nt = $n - ( 1189 * floor($n / 1189));
-					echo '&nbsp Уровень: <span id="tlevel">'. (floor($n / 1189)+1).'</span>';
-					echo '&nbsp Прочитано глав всего : <span id="tallchap">'.$n.'</span>';
-					echo '&nbsp Прочитано глав за этот раз: <span id="tthischap">'.$nt.'</span>';
+					//echo '&nbsp Уровень: <span id="tlevel">'. (floor($n / 1189)+1).'</span>';
+					//echo '&nbsp Прочитано глав всего : <span id="tallchap">'.$n.'</span>';
+					//echo '&nbsp Прочитано глав за этот раз: <span id="tthischap">'.$nt.'</span>';
 				}else{
-					echo '&nbsp Прочитано глав: <span id="tallchap">'.$n.'</span>';
+					//echo '&nbsp Прочитано глав: <span id="tallchap">'.$n.'</span>';
 					$nt = $n;
 				}
-				echo '&nbsp Осталось глав: <span id="tleftchap">'. (1189 - $nt).'</span>';
-				echo '&nbsp В процентах: <span id="tpercent">'.round((100/1189) * $nt,1).'</span>';
+				//echo '&nbsp Осталось глав: <span id="tleftchap">'. (1189 - $nt).'</span>';
+				//echo '&nbsp В процентах: <span id="tpercent">'.round((100/1189) * $nt,1).'</span>';
+				//echo '&nbsp В процентах: <span id="tpercent">'.round((100/1189) * $nt,1).'</span>';
 	   ?>
 	</table></div> 
 </div>

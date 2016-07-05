@@ -1,56 +1,77 @@
 header{
+	align-items: center;
 	background: transparent;
+	color: #eee;
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 20pt;
+	height: 50px;
 	position: fixed;
+	transition:background .1s;
 	width: 100%;
 	z-index: 1200;
-	height: 50px;
-	color: #eee;
-	font-size: 20pt;
 }
 header a{
-	text-decoration:none;
-	padding:10pt 20pt;
 	opacity:1;
+	text-decoration:none;
 	transition:opsity .3s;
 }
 header a:hover{
-	opacity:.6;
+	opacity:.8;
 }
 #iuser{
-	float:right;
+	padding: 5pt 10pt;
 }
-ilang{
-	float:left;
+#ilang{
+	
+}
+#ilang a{
+	display: inline-block;	
+	height: 45px;
+	padding-top: 5px;
+	text-align: center;
+	width: 50px;
+}
+#ilang a:hover{
+	cursor:pointer;
+	opacity:.8;
+}
+#ilang a.disabled{
+	color: #aaa;
+}
+#ilang a.disabled:hover{
+	cursor:default;
+	opacity:1;
 }
 #logo{
-	position: relative;
-	z-index: 300;
-	width: 6%;
-	left: 38%;
 	display: inline-block;
+	left: 38%;
+	position: relative;
 	transition:width .2s, left .2s;
+	width: 6%;
+	z-index: 300;
 }
 #logo img{
-	width: 100%;
 	margin-bottom:-25%;
+	width: 100%;
 }
 #sitename{
 	margin-bottom: 200px;
 }
 #sitename span{
 	color: #f1f1f1;
-	font-size: 4pc;
-	position: relative;
-	margin-top: 198px;
-	left: 38%;
-	z-index: 1000;
 	display: inline-block;
+	font-size: 4pc;
+	left: 38%;
+	margin-top: 198px;
+	position: relative;
 	transition:width .3s, left .3s;
+	z-index: 1000;
 }
 #content{
-	margin-top: 10px;
 	color: #f1f1f1;
 	font-size: 1.5pc;
+	margin-top: 10px;
 	padding: 50px 100px;
 }
 #threeelefant{
@@ -61,14 +82,14 @@ ilang{
 	padding: 0;
 }
 #threeelefant ul li{
-	list-style: none;
 	display: inline-block;
-	width: 32%;
+	list-style: none;
 	transition:width .2s;
+	width: 32%;
 }
 #threeelefant ul li img{
-	width: 40%;
 	display: inline-block;
+	width: 40%;
 }
 #threeelefant ul li b{
 	float: left;
@@ -76,24 +97,24 @@ ilang{
 	width: 100%;
 }
 #threeelefant ul li small{
-	width: 100%;
 	float: left;
+	width: 100%;
 }
 #reg-area{
-	margin-top: 100px;
 	margin-bottom: 100px;
+	margin-top: 100px;
 	text-align: center;
 }
 #reg-button{
+	background-color:transparent;
 	border: 2px solid #f1f1f1;
 	border-radius: 4px;
+	color:#f1f1f1;
 	display: inline-block;
 	font-size: 2pc;
 	padding: 10px;
-	width: 40%;
-	background-color:transparent;
 	transition: background .3s, color .3s;
-	color:#f1f1f1;
+	width: 40%;
 }
 #reg-button:hover{
 	background-color:#f1f1f1;
@@ -104,20 +125,24 @@ ilang{
 @media only screen and (max-width:970px) {
 	#content{
 		padding: 50px 10px;
+		text-align: justify;
+		font-size: 15pt;
 	}
 	#reg-button{
 		width: 70%;
+		font-size: 115%;
 	}
 	#threeelefant ul li{
 		width: 90%;
 	}
 	#logo{
+		left: 43.5%;
 		position: relative;
-		z-index: 300;
 		width: 15%;
-		left: 10%;
+		z-index: 300;
+		transform: translateY(-175%);
 	}
 	#sitename span{
-		left: 15%;
+		left: -7%;
 	}
 }

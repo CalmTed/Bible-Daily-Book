@@ -7,27 +7,27 @@
 #profile{
 	display:inline-block;
 	padding:0 5%;
-	width:30%;
 	text-align:center;
+	width:30%;
 	z-index:1300;
 }
 #image img{
-	margin-top:-64px;
-	height:128px;
 	border-radius: 5px;
+	height:128px;
+	margin-top:-64px;
 }
 #name{
-	text-align:center;
 	color:#aaa;
 	font-size:30px;
+	text-align:center;
 }
 #progress{
-	padding-right:5%;
+	float:right;
 	display:inline-block;
+	height:100px;
+	padding-right:5%;
 	text-align:right;
 	width:55%;
-	float:right;
-	height:100px;
 }
 #times{
 	background-color: #2E7D32;
@@ -60,8 +60,8 @@
 	content:'';
 	display:block;
 	height:100%;
-	width:0%;
 	transition:width linear 1s;
+	width:0%;
 }
 #addprogr{
 	background-color: #317934;
@@ -82,12 +82,12 @@
 }
 .btbutton{
 	background: #676767;
-	width: 64px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
 	cursor: pointer;
 	display:inline-block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 64px;
 }
 .btbutton:hover{
 	background: #6e6e6e;
@@ -95,17 +95,17 @@
 .btbutton:active{
 	background: #777;
 }
-/* ----- settings tab ----- */
+/*---------------------------------------- settings tab ---------------------------------------- */
 .settings{
-	text-align:center;
-	padding-top:0px;
 	padding-bottom:100px;
+	padding-top:0px;
+	text-align:center;
 }
 .settings h1{
 	color: #eee;
 	font-weight: 300;
-	margin-top: -40px;
 	margin-bottom: 100px;
+	margin-top: -40px;
 }
 #settlbl{
 	color:#eee;
@@ -116,16 +116,16 @@
 	
 }
 .settchckpass{
-	font-family:inset,Helvetica,Serif-sens;
-	display:inline-block;
-	padding:0 10px;
-	height:30px;
-	font-size:25px;
+	background-color:#888;
 	border:0;
 	border-left:1px solid #555;
 	color:#333;
-	background-color:#888;
 	cursor:pointer;
+	font-family:inset,Helvetica,Serif-sens;
+	font-size:21px;
+	display:inline-block;
+	height:30px;
+	padding:0 10px;
 }
 .settchckpass:hover{
 	background-color:#999;
@@ -136,38 +136,38 @@
 }
 .settinputs{
 	color: #eee;
+	font-size: 24px;
 	padding: 3% 25%;
 	padding-top:0;
-	font-size: 24px;
 	text-align:center;
 }
 .settinputs h1{
-	font-size: 136.5%;
 	color: #eee;
+	font-size: 136.5%;
 	font-weight: 300;
 	margin-top: -40px;
 }
 .settinputs input{
-	min-width:40%;
 	float:right;
+	min-width:40%;
 }
 .settinputs label{
 	display:block;
-	text-align:left;
-	margin-top:0;
 	margin-bottom:1%;
+	margin-top:0;
+	text-align:left;
 }
 .settinputs button{
-	font-family: inset,Helvetica,Serif-sens;
-	display: inline-block;
-	min-width: 40%;
-	padding: 1px 5px;
-	height: 30px;
-	font-size: 25px;
+	background-color: #888;
 	border: 0;
 	color: #eee;
-	background-color: #888;
 	cursor: pointer;
+	display: inline-block;
+	font-family: inset,Helvetica,Serif-sens;
+	font-size: 20px;
+	min-width: 40%;
+	height: 30px;
+	padding: 1px 5px;
 	margin-top:5%;
 }
 .settinputs button:hover{
@@ -177,7 +177,7 @@
 	background-color:#aaa;
 }
 #sett-aang{
-margin-top: 10%;
+	margin-top: 10%;
 	text-align: right;
 }
 #sett-aang button{
@@ -187,20 +187,20 @@ margin-top: 10%;
 	font-size: 60%;
 }
 #sett-aang .img{
-	display: inline-block;
-	float: left;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJ0lEQVQoU2N89+7dfwY0ICgoiC7EwDgUFP4HAnSXv3//HtMzQ0AhADRiNeQ5H806AAAAAElFTkSuQmCC);
 	background-size: 17px;
+	display: inline-block;
+	float: left;
 	height: 128px;
 }
 #sett-aang .img img{
 	height:128px;
 }
 #sett-a-lab,#sett-b-lab{
-	display: inline-block;
 	background-color: #888;
-	width: 40%;
+	display: inline-block;
 	text-align: center;
+	width: 40%;
 }
 #sett-a-lab:hover,#sett-b-lab:hover{
 	background-color:#777;
@@ -215,63 +215,154 @@ margin-top: 10%;
 	margin-bottom: 10%;
 }
 #sett-bg img{
-	width:50%;
 	float: left;
+	width:50%;
 }
 #sett-bg small{
 	font-size: 60%;
 }
-/* ----- table tab ----- */
+/* ---------------------------------------- table tab ---------------------------------------- */
 #table{
+	color:#eee;
 	font-size:20px;
 	min-height:100px;
 }
 #table h1{
 	color: #eee;
-	text-align: center;
+	font-size: 164.5%;
 	font-weight: 300;
 	margin-top: -40px;
-	font-size: 164.5%;
+	text-align: center;
 }
-table{
-	color:#eee;
-	width:100%;
-}
-tr{
+.tr,.th{
+	display:flex;
 	height:40px;
 }
-#table .th{
-	background-color:#444;
+.tr div,.th div{
+	align-self:center;
+	display: inline;
+	max-height: 65%;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
 }
-#table .th:hover{
-	background-color:#444;
+.tr div:nth-child(2),.th div:nth-child(1),.tr div:nth-child(4),.th div:nth-child(3){
+	flex-basis:15%;
 }
-#table td{
-	text-align:center;
+.tr div:nth-child(3),.tr div:nth-child(5),.th div:nth-child(2),.th div:nth-child(4){
+	flex-basis:40%;
 }
-#table tr:hover{
+#table .tr:hover{
 	background-color:#777;
 }
-#table tr:active{
+#table .tr:active{
 	background-color:#6a6a6a;
 }
 #table .s{
 	text-align:left;
-	max-height:30px;
 }
-/* ----- win and top panel ----- */
+#table .th{
+	background-color:#444;
+	font-size: 115%;
+	height: 48px;
+	position:relative;
+	top: 0;
+	width: 100%;
+	z-index:200;
+}
+#table .th:hover{
+	background-color:#444;
+}
+/* ---------------------------------------- search ---------------------------------------- */
+.search{
+	text-align:center;
+}
+.search h1{
+	color: #eee;
+	font-size: 24.5pt;
+	font-weight: 300;
+	margin: 0;
+	margin-top: -40px;
+}
+.search .srchinp{
+	height: 40px;
+	padding: 60px 0;
+}
+.srchinput{
+	height: 100%;
+	position: relative;
+	top: 4px;
+	width: 500px;
+}
+.srchbtn{
+	background: #888;
+	border: 0;
+	color: #333;
+	height: 38px;
+	margin-left: 2px;
+	width: 40px;
+}
+.srchbtn:hover{
+	background-color:#999;
+	cursor:pointer;
+}
+.srchbtn:active{
+	background-color:#9e9e9e;
+	color:#eee;
+}
+.search .srchtable{
+	color:#eee;
+}
+.sth,.str{
+	display:	flex;
+}
+.sth div,.str div{
+	display:inline-block;
+	align-self:center;
+}
+.sth div{
+	background-color:#444;
+	font-size: 17pt;
+}
+.str div{
+	font-size: 15pt;
+	max-height: 55px;
+	overflow: hidden;
+}
+.sth div:nth-child(1),.str div:nth-child(1){
+	flex-basis:15%;
+}
+.sth div:nth-child(2),.str div:nth-child(2){
+	flex-basis:85%;
+}
+.tr div:nth-child(2),.th div:nth-child(1),.tr div:nth-child(4),.th div:nth-child(3){
+	flex-basis:15%;
+}
+span.hl{
+	background-color:#ffeb3b;
+	color:#333;
+	padding:0 2px;
+}
+.ctr:hover{
+	background-color:#777;
+	cursor:pointer;
+}
+.ctr:active{
+	background-color:#7a7a7a;
+}
+/* ---------------------------------------- win and top panel ---------------------------------------- */
 #toppanel.active{
 	top:0px;
 }
 #toppanel{
 	background-color: #444;
+	height: 50px;
 	left: 0;
 	position: fixed;
-	height: 50px;
 	top: -50px;
+	transition:top .1s .1s;
 	width: 100%;
 	z-index: 1600;
-	transition:top .1s .1s;
 }
 #win.active{
 	top:50px;
@@ -279,19 +370,19 @@ tr{
 	opacity: 1;
 }
 #win{
-	transform:rotateY(40deg);
-	overflow-y:auto;
-	overflow-x: hidden;
 	background-color: #777;
 	padding-top:20px;
 	position: fixed;
-	left: 0;
 	height: 0px;
+	left: 0;
 	top: -100%;
-	width: 100%;
-	z-index: 1550;
+	transform:rotateY(40deg);
 	transition: top .3s ,transform .2s .1s,opacity .2s .1s;
 	opacity: 0;
+	overflow-x: hidden;
+	overflow-y:auto;
+	width: 100%;
+	z-index: 1550;
 }
 #wspan{
 	height:0px;
@@ -302,83 +393,83 @@ tr{
 }
 #wdatel,#wpass,#wnuml{
 	display: inline-block;
-	width: 29%;
 	padding-left:10%;
 	/* text-align: center; */
 	color: #eee;
-	font-size: 30px;
 	font-family: inset;
+	font-size: 30px;
+	width: 29%;
 }
 #wchl,#wtagsl{
 	display: inline-block;
-	padding-left:10%;
-	padding-top:30px;
-	width: 99%;
 	color: #eee;
 	font-size: 30px;
 	font-family: inset;
+	padding-left:10%;
+	padding-top:30px;
+	width: 99%;
 }
 #wdescl{
+	color: #eee;
 	display: inline-block;
+	font-family: inset;
+	font-size: 30px;
 	padding-left:10%;
 	padding-top:30px;
 	width: 99%;
-	color: #eee;
-	font-size: 30px;
-	font-family: inset;
 }
 #win input{
-	font-family:inset,Helvetica,Serif-sens;
-	display:inline-block;
-	max-width:40%;
-	padding:0 10px;
-	height:30px;
-	font-size:25px;
+	background-color:#888;
 	border:0;
 	color:#eee;
-	background-color:#888;
 	cursor:pointer;
+	font-family:inset,Helvetica,Serif-sens;
+	font-size:25px;
+	display:inline-block;
+	height:30px;
+	padding:0 10px;
+	max-width:40%;
 }
 #wchl input,#wtagsl input{
-	width:60%;
 	cursor:pointer;
+	width:60%;
 }
 #win textarea{
-	font-family:inset,Helvetica,Serif-sens;
-	display:inline-block;
-	min-height:290px;
-	width:80%;
-	max-height:1000px;
-	padding:0 10px;
-	height:30px;
-	font-size:25px;
+	background-color:#888;
 	border:0;
 	color:#eee;
-	background-color:#888;
 	cursor:pointer;
+	display:inline-block;
+	font-family:inset,Helvetica,Serif-sens;
+	font-size:25px;
+	height:30px;
+	min-height:290px;
+	max-height:1000px;
+	padding:0 10px;
 	resize:vertical;
+	width:80%;
 }
 #win textarea:read-only,#win input:read-only{
 	cursor:default;
 }
 #topdelite,#topadd,#topedit,#topback,#topsave{
-	height:40px;
+	color: #eee;
 	display:inline-block;
-	padding-top:10px;
-	text-align:center;
+	font-family: inset;
+	font-size: 22px;
+	height:40px;
 	min-width:100px;
 	max-width:150px;
-	color: #eee;
-	font-size: 26px;
-	font-family: inset;
+	padding-top:10px;
+	text-align:center;
 }	
 #topback{
 	padding-right:10px;
 }
 #topdelite,#topadd,#topedit,#topsave{
 	float:right;
-	min-width:50px;
 	max-width:100px;
+	min-width:50px;
 }
 #toppanel div:hover{
 	background-color:#555;
@@ -397,29 +488,35 @@ tr{
 #profile{
 	display:block;
 	padding:0 5%;
-	width:90%;
 	text-align:center;
+	width:90%;
 	z-index:1300;
 }
 #progress{
-	padding-right:5%;
 	display:block;
-	text-align:right;
-	width:100%;
 	float:right;
 	height:100px;
+	padding-right:5%;
+	text-align:right;
+	width:100%;
 }
-#table h1 {
-	margin-top: 20px;
+.tr div:nth-child(2),.th div:nth-child(1){
+	flex-basis:25%;
+}
+.tr div:nth-child(4),.th div:nth-child(3){
+	flex-basis:19%;
 }
 .settinputs{
 	padding: 3% 3%;
 }
-.settings h1 {
+.settings h1,.settinputs h1,.search h1,#table h1 {
 	margin-top: 20px;
 }
-.settinputs h1 {
-	margin-top: 20px;
+.search{
+	padding-bottom:160px;
+}
+.srchinput{
+	max-width: 70%;
 }
 #wdatel,#wnuml,#wpass{
 	display:inline-block;
@@ -441,8 +538,8 @@ tr{
 	width:20%;
 }
 footer{
-	width:100%;
 	left:0%;
+	width:100%;
 }
 }
 /* ------------------------------- SPETIAL SIZE ---------------------------------*/
